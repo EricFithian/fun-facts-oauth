@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facts with OAuth</title>
+</head>
+<body>
+    <section>
+        <div>
+            <h2 class="title">All Facts</h2>
+        </div>
+    </section>
+
+    <main class="container">
+        <div>
+            <div>
+                <% for(let idx=0; idx < facts.length; idx++){ %>
+                    <% const fact=facts[idx] %>
+                        <h2><%= fact.fact %></h2>
+                            <!-- add a delete form here  -->
+                            <div>
+                                <form method="POST" action="/facts/<%= fact._id %>?_method=DELETE">            <!-- "/products/0?_method=DELETE" -->
+                                    <input type="submit" value="Delete Fact"/>
+                                </form>
+                            </div>
+                        </p>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
